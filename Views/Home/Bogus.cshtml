@@ -1,0 +1,19 @@
+
+@model string[]
+@{
+    // the above line is parsing the concrete class passed to this view
+
+    // ViewData["sth"] is a dictionary data entry, which you can use
+    // across different related files
+    ViewData["Title"] = "Bogus";
+    var date = (System.DateTime) ViewBag.Date;
+    var date1 = (System.DateTime) ViewData["Date"]!;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    THis is my first .NET page.@ViewData["Name"]
+    The current time is @ViewBag.Date .
+    @date.ToShortDateString()
+</div>
