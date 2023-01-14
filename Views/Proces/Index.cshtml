@@ -1,0 +1,20 @@
+@using System.Diagnostics
+@model System.Diagnostics.Process[]
+@{
+    // here you can type in C#
+    ViewData["Title"] = "Home Page";
+    @* var procs = ViewBag.Procs as Process[]; *@
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Proces</h1>
+<ul>
+@foreach (var item in Model)
+{
+    <li><a asp-controller="Process"
+    asp-action="Display"
+    asp-route-id="@item.Id">@item.ProcessName</a></li>
+}
+</ul>
+</div>

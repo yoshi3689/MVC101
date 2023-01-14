@@ -1,0 +1,19 @@
+@Model
+@using System
+@{
+    ViewData["Title"] = "Files";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to COMP4870.</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <ul>
+    @foreach (var item in Model)
+    {
+        
+        <li><a asp-controller="Files"
+        asp-action="Details"
+        asp-route-id="@System.IO.Path.GetFileName(@item)">@System.IO.Path.GetFileName(@item)</a></li>
+    }
+    </ul>
+</div>
